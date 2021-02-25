@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    min-height: 8vh;
+
+    background-color: #494949;
+}
+
+.logo {
+    margin-left: 10px;
+    padding: 10px;
+
+}
+
+.logo img {
+    background-image: linear-gradient(rgb(220, 150, 12), rgb(24, 56, 56));
+    border-radius: 50%;
+    border: 2px solid white;
+    filter: blur(0.2px) saturate(1.8);
+    padding: 10px;
+
+}
+
+.travel-agency h2 {
+    transform: translateX(-123%);
+
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    transition: transform .3s ease linear;
+
+    position: relative;
+
+}
+
+
+
+.first-letter {
+    font-size: 3rem;
+    background-image: linear-gradient(rgb(220, 150, 12), rgb(24, 56, 56));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 2rem;
+    width: 25%;
+
+}
+
+.nav-links li {
+    list-style-type: none;
+    padding: 5px
+}
+
+.nav-links li:hover {
+    transform: scale(1.1);
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: semi-bold;
+    animation: main-header-anim 10s ease-in infinite;
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+
+}
+
+
+
+
+
+
+
+
+
+@keyframes main-header-anim {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(3px)
+    }
+
+    50% {
+        transform: translate(6px);
+    }
+
+    75% {
+        transform: translate(3px);
+    }
+
+    100% {
+        transform: translate(0px);
+    }
+}
+
+.main-container {
+    margin: 20px;
+    width: 82%;
+    grid-auto-flow: dense;
+    margin: 0 auto;
+}
+
+.gallery-items {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 200px 300px;
+    grid-gap: 10px;
+
+    margin: auto;
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+
+    /* responsive 1200px width*/
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .gallery-items {
+        width: 85%;
+
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 200px 300px;
+        grid-gap: 10px;
+    }
+
+    .paragraphs {
+        width: 85%;
+        margin: auto;
+
+
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    /* responsive 700px width*/
+    .gallery-items {
+        width: 85%;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50px 200px;
+    }
+}
+
+
+
+
+.gallery-item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+
+    transition: .5s ease-in-out;
+
+}
+
+.gallery-item:hover img {
+    transform: scale(1.3);
+}
+
+.gallery-item .text {
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+
+    text-align: center;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+
+    z-index: 5;
+
+
+    transition: .3s ease-in-out;
+
+    -webkit-backdrop-filter: blur(2px) saturate(1.2);
+    backdrop-filter: blur(2px) saturate(1.2);
+
+}
+
+.gallery-item:hover .text {
+    opacity: 1;
+    animation: move-down .3s linear;
+    padding: 1rem;
+
+}
+
+@keyframes move-down {
+    0% {
+        top: 10%
+    }
+
+    50% {
+        top: 35%;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
+
+
+
+.paragraphs {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    background-color: rgba(80, 33, 33, 0.7);
+    overflow: hidden;
+
+}
+
+
+
+@media screen and (max-width: 1180px) { /* responsive 1180px */
+    .paragraphs {
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .paragraph {
+       justify-content: center;
+       outline: 2px solid red;
+       font-size: 16px;
+      
+    
+    }
+
+
+}
+
+
+.paragraph {
+    flex: 1;
+
+    padding-top: 50px;
+    width: 80%;
+    height: 20rem;
+
+}
+
+.paragraph h3 {
+
+    color: rgb(255, 255, 255);
+
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: semi-bold;
+    letter-spacing: 5px;
+
+    transform: translateX(25%);
+
+}
+
+.paragraph p {
+    color: white;
+    margin: 10px;
+    padding-top: 20px;
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
+
+}
+
+
+footer {
+    min-height: 4vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #494949;
+    color: rgb(255, 255, 255);
+
+}
